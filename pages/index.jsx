@@ -1,18 +1,10 @@
-import Head from 'next/head';
-import Link from 'next/link';
+import Layout from '../layouts/default';
 
 const Home = () => {
   return (
-    <div className="container">
-      <Head>
-        <title>Gitfolio</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title="Gitfolio" className="container">
       <main>
         <h1 className="title">Aman Shaikh</h1>
-        <Link href="/about">
-          <a>Go to About page</a>
-        </Link>
         <p className="description">
           Works as Product Engineer at ESRI
         </p>
@@ -63,7 +55,7 @@ const Home = () => {
           font-size: 1.5rem;
         }
       `}</style>
-    </div>
+    </Layout>
   )
 }
 export default Home;
