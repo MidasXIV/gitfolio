@@ -1,11 +1,20 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
+// NProgress.configure({ showSpinner: false });
+
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 const Layout = ({ children, title }) => (
   <div>
     <Head>
       <title>{title}</title>
       <link rel="icon" href="/favicon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     </Head>
 
     <header>
