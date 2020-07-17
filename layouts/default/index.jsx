@@ -13,13 +13,12 @@ const Layout = ({ children, title }) => (
   <div>
     <Head>
       <title>{title}</title>
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
     </Head>
 
     <header>
       <Link href="/"><a>Home</a></Link>
       <Link href="/about"><a>About</a></Link>
+      <Link href="/repositories"><a>Repositories</a></Link>
     </header>
 
     {children}
