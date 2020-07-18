@@ -18,13 +18,16 @@ export default class About extends Component {
 
     return (
       <Layout title="About">
-        <div className="px-4 py-4">
-          <div className="sm:max-w-xs md:max-w-xs sm:w-1/2 max-w-sm rounded overflow-hidden shadow-lg bg-gray-300">
+        <div className="px-4 py-4 about-background">
+          <div className="sm:max-w-xs md:max-w-xs sm:w-1/2 max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
             <img className="rounded-lg" src={user.avatar_url} alt="User Github logo" />
             <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">{user.login}</div>
+              <div className="font-bold text-xl">Aman Shaikh</div>
               <p className="text-gray-700 text-base">
-                {user.bio}
+                Full Stack Software Engineer
+              </p>
+              <p className="text-gray-700 mt-3 text-sm">
+                Self-motivated developer, who is willing to learn and create outstanding UI applications.
               </p>
             </div>
             <div className="px-6 py-4">
@@ -34,6 +37,11 @@ export default class About extends Component {
             </div>
           </div>
         </div>
+        <style jsx>{`
+        .about-background {
+          background-color: #F2F2F2; 
+        }
+        `}</style>
       </Layout>
     )
   }
