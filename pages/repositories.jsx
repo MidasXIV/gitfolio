@@ -75,6 +75,13 @@ const Repositories = () => {
           border-color: #0070f3;
         }
 
+        @media (max-width: 600px) {
+          .grid {
+            width: 100%;
+            flex-direction: column;
+          }
+        }
+        
       `}</style>
     </Layout>
   );
