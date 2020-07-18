@@ -1,4 +1,5 @@
 import Layout from '../layouts/default';
+import EducationCard from '../components/education-card';
 import AboutCard from '../components/about-card';
 
 import { Component } from 'react';
@@ -19,7 +20,10 @@ export default class About extends Component {
 
     return (
       <Layout title="About">
-        <AboutCard user={user} />
+        <div className="flex flex-col md:flex-row">
+          <AboutCard user={user} />
+          <EducationCard />
+        </div>
       </Layout>
     )
   }
