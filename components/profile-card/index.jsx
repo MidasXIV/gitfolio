@@ -10,7 +10,7 @@ export default class EducationCard extends Component {
     const { user } = this.props;
     return (
       <div>
-        <div className="px-4 py-4 about-background">
+        <div className="px-4 py-4">
           <div className="sm:max-w-xs md:max-w-xs max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
             <img className="rounded-lg" src={user.avatar_url} alt="User Github logo" />
             <div className="px-6 py-4">
@@ -29,11 +29,6 @@ export default class EducationCard extends Component {
             </div>
           </div>
         </div>
-        <style jsx>{`
-        .about-background {
-          background-color: #F2F2F2; 
-        }
-      `}</style>
       </div>
     );
   }
