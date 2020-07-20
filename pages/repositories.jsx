@@ -1,56 +1,68 @@
 import Layout from '../layouts/default';
+import { Component } from 'react';
+import { UserRepositoriesResource, userFeaturedRepositories } from '../config/user.config';
 
-const Repositories = () => {
-  return (
-    <Layout title="Repositories" className="container">
-      <main>
-        <h1 className="title">Repositories</h1>
-        <ul className="grid">
-          <li className="card">Repository 1</li>
-          <li className="card">Repository 2</li>
-          <li className="card">Repository 3</li>
-        </ul>
-      </main>
-      <style jsx>{`
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
+export default class Repositories extends Component {
 
-          max-width: 800px;
-          margin-top: 3rem;
-        }
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
+  static async getInitialProps() {
 
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
+    const repositoryData = await fetch(UserRepositoriesResource);
+    const parsedRepositoryData = await repositoryData.json();
+    const filteredRepositoryData = parsedRepositoryData.filter((repo) => userFeaturedRepositories.indexOf(repo.name) >= 0);
+    console.log(filteredRepositoryData.map(repo => repo.name));
+    return { repositories: filteredRepositoryData }
+  }
 
-        @media (max-width: 600px) {
+  render() {
+    const { repositories } = this.props;
+    return (
+      <Layout title="Repositories" className="container">
+        <main>
+          <h1 className="title">Repositories</h1>
+          <ul className="grid">
+            {repositories.map(repo => (<li key={repo.id} className="card">{repo.name}</li>))}
+          </ul>
+        </main>
+        <style jsx>{`
           .grid {
-            width: 100%;
-            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+  
+            max-width: 800px;
+            margin-top: 3rem;
           }
-        }
-        
-      `}</style>
-    </Layout>
-  );
+  
+          .card {
+            margin: 1rem;
+            flex-basis: 45%;
+            padding: 1.5rem;
+            text-align: left;
+            color: inherit;
+            text-decoration: none;
+            border: 1px solid #eaeaea;
+            border-radius: 10px;
+            transition: color 0.15s ease, border-color 0.15s ease;
+          }
+  
+          .card:hover,
+          .card:focus,
+          .card:active {
+            color: #0070f3;
+            border-color: #0070f3;
+          }
+  
+          @media (max-width: 600px) {
+            .grid {
+              width: 100%;
+              flex-direction: column;
+            }
+          }
+          
+        `}</style>
+      </Layout>
+    );
+  }
 }
-
-export default Repositories;
