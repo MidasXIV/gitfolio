@@ -6,14 +6,14 @@ export default class EducationCard extends Component {
     return (
       <div>
         <div className="px-4 py-4">
-          <div className="max-w-lg rounded-lg overflow-hidden shadow-lg bg-white">
+          <div className="sm:max-w-full md:max-w-lg rounded-lg overflow-hidden shadow-lg bg-white">
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Education</div>
 
-              <div class="flex flex-col md:items-center md:flex-row">
-                <div class="font-semibold text-base text-gray-900">Birla Institue of Technology and Science</div>
-                <div class="flex-1"></div>
-                <div class="text-sm text-gray-600">2015 - 2019</div>
+              <div className="flex flex-col md:items-center md:flex-row">
+                <div className="font-semibold text-base text-gray-900">Birla Institue of Technology and Science</div>
+                <div className="flex-1"></div>
+                <div className="text-sm text-gray-600">2015 - 2019</div>
               </div>
 
               <p className="text-gray-700 mt-2 text-sm">
