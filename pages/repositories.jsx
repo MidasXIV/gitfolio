@@ -1,38 +1,47 @@
 import Layout from '../layouts/default';
 import { Component } from 'react';
-import { UserRepositoriesResource, userFeaturedRepositories } from '../config/user.config';
+import { userRepositories } from '../config/user.config';
+import RepositoryCard from '../components/repository-card';
 
 export default class Repositories extends Component {
 
-
   static async getInitialProps() {
 
-    const repositoryData = await fetch(UserRepositoriesResource);
+    const repositoryData = await fetch(userRepositories.userRepositoriesResource);
     const parsedRepositoryData = await repositoryData.json();
-    const filteredRepositoryData = parsedRepositoryData.filter((repo) => userFeaturedRepositories.indexOf(repo.name) >= 0);
-    console.log(filteredRepositoryData.map(repo => repo.name));
-    return { repositories: filteredRepositoryData }
+
+    // Filter github repositories response and keep only featured repos 
+    const filteredRepositoryData = parsedRepositoryData
+      .filter((repo) => userRepositories.featured
+        .some(featuredRepo => featuredRepo.name === repo.name)
+      );
+
+    // Mix Filtered repositories response with featured repos to get custom name and bio
+    const repositories = filteredRepositoryData.map(repo => {
+      const featuredRepo = userRepositories.featured.find(featuredRepo => featuredRepo.name === repo.name);
+      return { ...repo, ...featuredRepo }
+    });
+
+    return { repositories: repositories }
+
   }
 
   render() {
     const { repositories } = this.props;
     return (
-      <Layout title="Repositories" className="container">
-        <main>
-          <h1 className="title">Repositories</h1>
-          <ul className="grid">
-            {repositories.map(repo => (<li key={repo.id} className="card">{repo.name}</li>))}
+      <Layout title="Repositories">
+        <div className="px-4 py-4 primary-background">
+          {/* <h1 className="font-bold text-2xl">Featured Repositories</h1> */}
+          <ul className="min-w-full flex flex-wrap justify-around flex-col md:flex-row">
+            {repositories.map((repository) => {
+              return <RepositoryCard key={repository.id} repository={repository} />
+            })
+            }
           </ul>
-        </main>
+        </div>
         <style jsx>{`
-          .grid {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-  
-            max-width: 800px;
-            margin-top: 3rem;
+          .primary-background {
+            background-color: #F2F2F2; 
           }
   
           .card {
@@ -41,6 +50,7 @@ export default class Repositories extends Component {
             padding: 1.5rem;
             text-align: left;
             color: inherit;
+            background-color: #FFFFFF; 
             text-decoration: none;
             border: 1px solid #eaeaea;
             border-radius: 10px;

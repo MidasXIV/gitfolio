@@ -20,12 +20,12 @@ export default class About extends Component {
 
     return (
       <Layout title="About">
-        <div className="min-w-full flex flex-col md:flex-row about-background">
+        <div className="min-w-full flex flex-col md:flex-row primary-background">
           <AboutCard user={user} />
           <EducationCard />
         </div>
         <style jsx>{`
-          .about-background {
+          .primary-background {
             background-color: #F2F2F2; 
           }
         `}</style>
