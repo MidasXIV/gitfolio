@@ -23,7 +23,7 @@ const Layout = ({ children, title }) => (
         <Link href="/"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Home</a></Link>
         <Link href="/about"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">About</a></Link>
         <Link href="/repositories"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Repositories</a></Link>
-        <a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Blog</a>
+        <Link href="/blog"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Blog</a></Link>
       </div>
     </header>
 
@@ -51,7 +51,7 @@ const Layout = ({ children, title }) => (
       header a:active {
         font-weight: bold;
         // color: orange;
-        text-decoration: underline overline;
+        text-decoration: underline;
       }
 
       footer {
