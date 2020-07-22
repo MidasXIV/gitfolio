@@ -15,8 +15,8 @@ const Layout = ({ children, title }) => (
       <title>{title}</title>
     </Head>
 
-    <header className="">
-      <div className="">
+    <header>
+      <div>
 
       </div>
       <div className="flex justify-end">
@@ -29,15 +29,22 @@ const Layout = ({ children, title }) => (
 
     {children}
 
-    <footer>
-      <a
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=default-&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by{' '}
-        <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-      </a>
+    <footer className="min-w-full">
+      <div className="w-3/4 py-4 border-r">
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="uppercase font-mono font-semibold text-xs"
+        >
+          Powered by{' '}
+          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+        </a>
+      </div>
+      <div className="w-1/4 flex justify-end bg-gray-700">
+
+      </div>
+
     </footer>
 
     <style jsx>{`
@@ -55,8 +62,8 @@ const Layout = ({ children, title }) => (
       }
 
       footer {
-        width: 100%;
-        height: 50px;
+        // width: 100%;
+        // height: 50px;
         border-top: 1px solid #eaeaea;
         display: flex;
         justify-content: center;
@@ -83,7 +90,7 @@ const Layout = ({ children, title }) => (
       }
     `}</style>
 
-  </div>
+  </div >
 );
 
 export default Layout;

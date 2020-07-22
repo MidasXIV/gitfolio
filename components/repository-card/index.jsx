@@ -16,7 +16,7 @@ export default class RepositoryCard extends Component {
             <div>
               <div className="px-6 py-4">
                 <div className="font-bold text-xl">{repository.displayName}</div>
-                <p className="text-gray-700 mt-3 text-sm">
+                <p className="text-gray-700 text-sm">
                   {repository.description}
                 </p>
               </div>
