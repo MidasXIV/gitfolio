@@ -29,8 +29,8 @@ const Layout = ({ children, title }) => (
 
     {children}
 
-    <footer className="min-w-full">
-      <div className="w-3/4 py-4 border-r">
+    <footer className="min-w-full flex flex-col md:flex-row">
+      <div className="py-4 border-b w-full md:w-3/4 md:border-r">
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-&utm_campaign=create-next-app"
           target="_blank"
@@ -41,55 +41,10 @@ const Layout = ({ children, title }) => (
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </div>
-      <div className="w-1/4 flex justify-end bg-gray-700">
-
+      <div className="md:w-1/4 py-4  w-full bg-gray-700">
+        
       </div>
-
     </footer>
-
-    <style jsx>{`
-      header {
-        color: #202121;
-        border-bottom: 1px solid #eaeaea;
-      }
-
-      header a:hover,
-      header a:focus,
-      header a:active {
-        font-weight: bold;
-        // color: orange;
-        text-decoration: underline;
-      }
-
-      footer {
-        // width: 100%;
-        // height: 50px;
-        border-top: 1px solid #eaeaea;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      footer img {
-        margin-left: 0.5rem;
-      }
-
-      footer a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .logo {
-        height: 1em;
-      }
-    `}</style>
-
   </div >
 );
 
