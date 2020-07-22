@@ -1,4 +1,4 @@
-import Layout from '../components/default';
+import Layout from '../layouts/default';
 import BlogCard from '../components/blog-card';
 
 import { Component } from 'react';

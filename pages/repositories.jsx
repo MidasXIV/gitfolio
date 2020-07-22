@@ -1,4 +1,4 @@
-import Layout from '../components/default';
+import Layout from '../layouts/default';
 import { Component } from 'react';
 import { userRepositories } from '../config/user.config';
 import RepositoryCard from '../components/repository-card';
