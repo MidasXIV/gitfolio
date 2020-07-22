@@ -15,7 +15,7 @@ const Layout = ({ children, title }) => (
       <title>{title}</title>
     </Head>
 
-    <header>
+    <div className="header">
       <div className="min-w-full flex flex-col md:flex-row justify-between">
         <div>
           <h6 className="px-4 py-4 uppercase font-mono font-semibold text-xs border-b md:border-none">Gitfolio</h6>
@@ -27,11 +27,11 @@ const Layout = ({ children, title }) => (
           <Link href="/blog"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Blog</a></Link>
         </div>
       </div>
-    </header>
+    </div>
 
     {children}
 
-    <footer>
+    <div className="footer">
       <div className="bottom-0 min-w-full flex flex-col md:flex-row uppercase font-mono font-semibold text-xs">
         <div className="py-4 border-b w-full md:w-3/4 md:border-r">
           <a
@@ -47,7 +47,7 @@ const Layout = ({ children, title }) => (
           <a className="text-gray-400">Gitfolio Podcast</a>
         </div>
       </div>
-    </footer>
+    </div>
   </div >
 );
 
