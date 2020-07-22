@@ -1,4 +1,4 @@
-import Layout from '../layouts/default';
+import Layout from '../components/default';
 import EducationCard from '../components/education-card';
 import AboutCard from '../components/profile-card';
 
