@@ -15,11 +15,16 @@ const Layout = ({ children, title }) => (
       <title>{title}</title>
     </Head>
 
-    <header>
-      <Link href="/"><a>Home</a></Link>
-      <Link href="/about"><a>About</a></Link>
-      <Link href="/repositories"><a>Repositories</a></Link>
-      <a>Blog</a>
+    <header className="">
+      <div className="">
+
+      </div>
+      <div className="flex justify-end">
+        <Link href="/"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Home</a></Link>
+        <Link href="/about"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">About</a></Link>
+        <Link href="/repositories"><a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Repositories</a></Link>
+        <a className="px-4 py-4 uppercase font-mono font-semibold text-xs border-l">Blog</a>
+      </div>
     </header>
 
     {children}
@@ -37,19 +42,16 @@ const Layout = ({ children, title }) => (
 
     <style jsx>{`
       header {
-        width: 100%;
-        height: 50px;
+        color: #202121;
         border-bottom: 1px solid #eaeaea;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
       }
 
       header a:hover,
       header a:focus,
       header a:active {
         font-weight: bold;
-        color: orange;
+        // color: orange;
+        text-decoration: underline overline;
       }
 
       footer {
