@@ -1,0 +1,29 @@
+.header {
+  color: #202121;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.header a:hover,
+.header a:focus,
+.header a:active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer {
+  border-top: 1px solid #eaeaea;
+}
+
+.footer img {
+  margin-left: 0.5rem;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 1em;
+}
