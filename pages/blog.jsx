@@ -1,13 +1,14 @@
-import Layout from '../layouts/default';
-import BlogCard from '../components/blog-card';
-
-import { Component } from 'react';
+import { Component } from "react";
+import Layout from "../layouts/default";
+import BlogCard from "../components/blog-card";
 
 export default class Blog extends Component {
-
+  constructor(props) {
+    super(props);
+    this.props = props;
+  }
 
   render() {
-
     return (
       <Layout title="Blog">
         <div className="min-w-full primary-background">
@@ -17,10 +18,10 @@ export default class Blog extends Component {
         </div>
         <style jsx>{`
           .primary-background {
-            background-color: #F2F2F2; 
+            background-color: #f2f2f2;
           }
         `}</style>
       </Layout>
-    )
+    );
   }
 }

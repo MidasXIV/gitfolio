@@ -1,21 +1,19 @@
-import Layout from '../layouts/default';
-import EducationCard from '../components/education-card';
-import AboutCard from '../components/profile-card';
-
-import { Component } from 'react';
+import { Component } from "react";
+import PropTypes from "prop-types";
+import Layout from "../layouts/default";
+import EducationCard from "../components/education-card";
+import AboutCard from "../components/profile-card";
 
 export default class About extends Component {
-
   static async getInitialProps() {
-    const githubUser = 'midasxiv';
+    const githubUser = "midasxiv";
     const githubResource = `https://api.github.com/users/${githubUser}`;
     const githubData = await fetch(githubResource);
     const parseGithubData = await githubData.json();
-    return { user: parseGithubData }
+    return { user: parseGithubData };
   }
 
   render() {
-
     const { user } = this.props;
 
     return (
@@ -26,10 +24,18 @@ export default class About extends Component {
         </div>
         <style jsx>{`
           .primary-background {
-            background-color: #F2F2F2; 
+            background-color: #f2f2f2;
           }
         `}</style>
       </Layout>
-    )
+    );
   }
 }
+
+About.propTypes = {
+  user: PropTypes.objectOf(PropTypes.number)
+};
+
+About.propTypes = {
+  user: PropTypes.objectOf(PropTypes.number).isRequired
+};
