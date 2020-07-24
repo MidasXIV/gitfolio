@@ -36,9 +36,5 @@ export default class RepositoryCard extends Component {
 }
 
 RepositoryCard.propTypes = {
-  repository: PropTypes.objectOf(PropTypes.number)
-};
-
-RepositoryCard.propTypes = {
-  repository: PropTypes.objectOf(PropTypes.number).isRequired
+  repository: PropTypes.objectOf(PropTypes.any).isRequired
 };

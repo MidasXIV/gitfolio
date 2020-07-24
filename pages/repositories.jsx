@@ -82,9 +82,5 @@ export default class Repositories extends Component {
 }
 
 Repositories.propTypes = {
-  repositories: PropTypes.objectOf(PropTypes.number)
-};
-
-Repositories.propTypes = {
-  repositories: PropTypes.objectOf(PropTypes.number).isRequired
+  repositories: PropTypes.objectOf(PropTypes.any).isRequired
 };

@@ -2,7 +2,7 @@ import { Component } from "react";
 import PropTypes from "prop-types";
 import { userInfo } from "../../config/user.config";
 
-export default class EducationCard extends Component {
+export default class ProfileCard extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -25,6 +25,26 @@ export default class EducationCard extends Component {
                 <p className="text-gray-700 text-base">{userInfo.role}</p>
                 <p className="text-gray-700 mt-3 text-sm">{userInfo.bio}</p>
               </div>
+              <div className="px-6 py-4 flex flex-row justify-between">
+                <a href="https://dev.to/midasxiv">
+                  <img
+                    src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+                    alt="Midas/XIV's DEV Profile"
+                    height="28"
+                    width="28"
+                  />
+                </a>
+                <a
+                  className="github-button"
+                  href="https://github.com/midasxiv"
+                  data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+                  data-size="large"
+                  data-show-count="true"
+                  aria-label="Follow @midasxiv on GitHub"
+                >
+                  Follow @midasxiv
+                </a>
+              </div>
               <div className="px-6 py-4">
                 <span className="inline-block bg-gray-200 rounded-lg px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
                   #photography
@@ -44,10 +64,6 @@ export default class EducationCard extends Component {
   }
 }
 
-EducationCard.propTypes = {
-  user: PropTypes.objectOf(PropTypes.number)
-};
-
-EducationCard.propTypes = {
-  user: PropTypes.objectOf(PropTypes.number).isRequired
+ProfileCard.propTypes = {
+  user: PropTypes.objectOf(PropTypes.any).isRequired
 };

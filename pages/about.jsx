@@ -2,7 +2,7 @@ import { Component } from "react";
 import PropTypes from "prop-types";
 import Layout from "../layouts/default";
 import EducationCard from "../components/education-card";
-import AboutCard from "../components/profile-card";
+import ProfileCard from "../components/profile-card";
 
 export default class About extends Component {
   static async getInitialProps() {
@@ -19,7 +19,7 @@ export default class About extends Component {
     return (
       <Layout title="About">
         <div className="min-w-full flex flex-col md:flex-row primary-background">
-          <AboutCard user={user} />
+          <ProfileCard user={user} />
           <EducationCard />
         </div>
         <style jsx>{`
@@ -33,9 +33,5 @@ export default class About extends Component {
 }
 
 About.propTypes = {
-  user: PropTypes.objectOf(PropTypes.number)
-};
-
-About.propTypes = {
-  user: PropTypes.objectOf(PropTypes.number).isRequired
+  user: PropTypes.objectOf(PropTypes.any).isRequired
 };
