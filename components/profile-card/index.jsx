@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import Head from "next/head";
 import { userInfo } from "../../config/user.config";
 
 export default class ProfileCard extends Component {
@@ -12,6 +13,9 @@ export default class ProfileCard extends Component {
     const { user } = this.props;
     return (
       <div>
+        <Head>
+          <script defer src="/js/github-buttons.js" />
+        </Head>
         <div className="px-4 py-4">
           <div className="sm:max-w-full md:max-w-xs max-w-sm flex flex-col sm:flex-row md:flex-col rounded-lg overflow-hidden shadow-lg bg-white">
             <img
@@ -25,7 +29,7 @@ export default class ProfileCard extends Component {
                 <p className="text-gray-700 text-base">{userInfo.role}</p>
                 <p className="text-gray-700 mt-3 text-sm">{userInfo.bio}</p>
               </div>
-              <div className="px-6 py-4 flex flex-row justify-between">
+              <div className="px-6 py-4 flex flex-row justify-around">
                 <a href="https://dev.to/midasxiv">
                   <img
                     src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"

@@ -15,7 +15,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
           />
-          <script async defer src="https://buttons.github.io/buttons.js" />
         </Head>
         <body>
           <Main />
