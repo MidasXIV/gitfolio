@@ -82,5 +82,5 @@ export default class Repositories extends Component {
 }
 
 Repositories.propTypes = {
-  repositories: PropTypes.objectOf(PropTypes.any).isRequired
+  repositories: PropTypes.arrayOf(PropTypes.object).isRequired
 };
