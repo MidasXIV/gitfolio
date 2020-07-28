@@ -1,8 +1,8 @@
 import { Component } from "react";
-import Layout from "../layouts/default";
-import BlogCard from "../components/blog-card";
+import Layout from "../../layouts/default";
+import BlogCard from "../../components/blog-card";
 
-export default class Blog extends Component {
+export default class BlogPost extends Component {
   constructor(props) {
     super(props);
     this.props = props;

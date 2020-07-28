@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 
 export default class BlogCard extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export default class BlogCard extends Component {
   }
 
   render() {
+    const { blog } = this.props;
     return (
       <div className="relative h-full mx-auto max-w-5xl px-4 py-4">
         <div className="relative md:flex rounded-md shadow-2xl overflow-hidden">
@@ -44,19 +46,14 @@ export default class BlogCard extends Component {
               <polygon points="50,0 100,0 50,100 0,100" />
             </svg>
             <div className="relative py-12 md:py-16 px-8 md:px-16 text-gray-700 leading-relaxed">
-              <p className="text-2xl font-light">SLACK</p>
-              <p>
-                As <strong className="text-gray-900 font-medium">Slack</strong>{" "}
-                grows rapidly, using Stripe helps them scale payments easily
-                &mdash; supporting everything from getting paid by users around
-                the world to enabling ACH payments for corporate customers.
-              </p>
+              <p className="text-2xl font-light">{blog.name}</p>
+              <p>{blog.description}</p>
               <p className="mt-6">
                 <a
                   href="#"
                   className="font-medium text-indigo-600 hover:text-indigo-900"
                 >
-                  Learn more about our users &rarr;
+                  read full article &rarr;
                 </a>
               </p>
             </div>
@@ -66,3 +63,7 @@ export default class BlogCard extends Component {
     );
   }
 }
+
+BlogCard.propTypes = {
+  blog: PropTypes.objectOf(PropTypes.any).isRequired
+};
