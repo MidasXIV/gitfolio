@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Layout from "../../layouts/default";
+import { getAllBlogs } from "../../lib/blog";
 import BlogCard from "../../components/blog-card";
 
 export default class Blog extends Component {
@@ -9,16 +10,15 @@ export default class Blog extends Component {
   }
 
   render() {
-    const blog = {
-      title: "Temp Blog 1",
-      description: " Temp Blog 1 Description"
-    };
     return (
       <Layout title="Blog">
         <div className="min-w-full primary-background">
           <h1 className="title text-5xl font-light">Blog</h1>
-          <BlogCard blog={blog} />
-          <BlogCard blog={blog} />
+          <ul>
+            {getAllBlogs().map((blog) => (
+              <BlogCard blog={blog} key={blog.slug} />
+            ))}
+          </ul>
         </div>
         <style jsx>{`
           .primary-background {
