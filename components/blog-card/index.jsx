@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 
 export default class BlogCard extends Component {
@@ -46,15 +47,17 @@ export default class BlogCard extends Component {
               <polygon points="50,0 100,0 50,100 0,100" />
             </svg>
             <div className="relative py-12 md:py-16 px-8 md:px-16 text-gray-700 leading-relaxed">
-              <p className="text-2xl font-light">{blog.name}</p>
+              <p className="text-2xl font-light">{blog.title}</p>
               <p>{blog.description}</p>
               <p className="mt-6">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-900"
-                >
-                  read full article &rarr;
-                </a>
+                <Link href={{ pathname: `/blog/${blog.slug}` }}>
+                  <a
+                    href="#"
+                    className="font-medium text-indigo-600 hover:text-indigo-900"
+                  >
+                    read full article &rarr;
+                  </a>
+                </Link>
               </p>
             </div>
           </div>
