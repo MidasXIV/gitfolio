@@ -19,7 +19,9 @@ export default class BlogPost extends Component {
 
     return (
       <Layout title={`Gitfolio | ${title}`}>
-        <ReactMarkdown source={content} />
+        <article className="px-4 py-4 mx-auto xs:w-full sm:w-1/2">
+          <ReactMarkdown source={content} />
+        </article>
       </Layout>
     );
   }
@@ -50,9 +52,6 @@ export async function getStaticPaths() {
       }
     };
   });
-
-  console.log(paths);
-
   return {
     paths,
     fallback: false
