@@ -1,7 +1,7 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
 import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
+import BlogLayout from "../../layouts/blog";
 import Layout from "../../layouts/default";
 import { getAllBlogs } from "../../lib/blog";
 
@@ -13,15 +13,13 @@ export default class BlogPost extends Component {
 
   render() {
     const { blog } = this.props;
-    const { slug, title, author, content } = blog;
+    const { content, title } = blog;
 
     if (!content) return <></>;
 
     return (
       <Layout title={`Gitfolio | ${title}`}>
-        <article className="px-4 py-4 mx-auto xs:w-full sm:w-1/2">
-          <ReactMarkdown source={content} />
-        </article>
+        <BlogLayout blog={blog} />
       </Layout>
     );
   }
