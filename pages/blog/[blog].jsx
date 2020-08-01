@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import matter from "gray-matter";
 import BlogLayout from "../../layouts/blog";
 import Layout from "../../layouts/default";
-import { getAllBlogs } from "../../lib/blog";
+import { getAllBlogs, getRequestedblog } from "../../lib/blog";
 
 export default class BlogPost extends Component {
   constructor(props) {
@@ -66,9 +66,14 @@ export async function getStaticProps({ params }) {
   const rawContent = await import(`../../content/blogs/${slug}.md`);
   /** data has properties title and author */
   const { data, content } = matter(rawContent.default);
+  /** ideally returns blog data from blogs.json
+   * and author data from author.json
+   * */
+  const blogData = getRequestedblog(slug);
 
   // Pass blog data to the page via props
-  return { props: { blog: { slug, content, ...data } } };
+  // blogData overwrites the blog title
+  return { props: { blog: { slug, content, ...blogData } } };
 }
 
 // refer
