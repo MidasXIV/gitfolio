@@ -1,6 +1,5 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
-import styles from "../index.module.css";
 
 export default class BlogHeader extends Component {
   constructor(props) {

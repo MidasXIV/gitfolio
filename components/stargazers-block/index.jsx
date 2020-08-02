@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 
 export default class Stargazers extends Component {
   constructor(props) {
@@ -7,6 +8,7 @@ export default class Stargazers extends Component {
   }
 
   render() {
+    const { stargazers } = this.props;
     return (
       <div className="px-4 py-4">
         <div className="flex items-center text-grey-darker mb-4">
@@ -24,7 +26,8 @@ export default class Stargazers extends Component {
             />
           </svg>
           <span>
-            <strong className="text-black">12</strong> Followers you know
+            <strong className="text-black">{stargazers}</strong>{" "}
+            Stargazers
           </span>
         </div>
         <div className="flex">
@@ -68,3 +71,7 @@ export default class Stargazers extends Component {
     );
   }
 }
+
+Stargazers.propTypes = {
+  stargazers: PropTypes.number.isRequired
+};
