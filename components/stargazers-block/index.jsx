@@ -26,8 +26,7 @@ export default class Stargazers extends Component {
             />
           </svg>
           <span>
-            <strong className="text-black">{stargazers}</strong>{" "}
-            Stargazers
+            <strong className="text-black">{stargazers}</strong> Stargazers
           </span>
         </div>
         <div className="flex">
